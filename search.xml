@@ -8,7 +8,7 @@
       <link href="/API%E5%B9%B3%E5%8F%B0/"/>
       <url>/API%E5%B9%B3%E5%8F%B0/</url>
       
-        <content type="html"><![CDATA[<h1 id="数据库表设计"><a href="#数据库表设计" class="headerlink" title="数据库表设计"></a>数据库表设计</h1>]]></content>
+        <content type="html"><![CDATA[<h1 id="🗄数据库表设计"><a href="#🗄数据库表设计" class="headerlink" title="🗄数据库表设计"></a>🗄数据库表设计</h1><h2 id="📊接口信息表"><a href="#📊接口信息表" class="headerlink" title="📊接口信息表"></a>📊接口信息表</h2><blockquote><p>Tips: 仿照网络中请求样例进行设计</p><p>​- status中 0-关闭(默认) 1 -打开 </p></blockquote><table><thead><tr><th align="center">id</th><th align="center">名称</th><th align="center">描述</th><th align="center">地址</th><th align="center">类型</th><th align="center">请求头</th><th align="center">响应头</th><th align="center">状态</th><th align="center">创建时间</th><th align="center">更新时间</th><th align="center">是否删除</th></tr></thead><tbody><tr><td align="center">id</td><td align="center">name</td><td align="center">description</td><td align="center">url</td><td align="center">type</td><td align="center">requestHeader</td><td align="center">responseHeader</td><td align="center">status</td><td align="center">createTime</td><td align="center">updateTime</td><td align="center">isDelete</td></tr></tbody></table><p>id | name 接口名称 | description 描述 | url 接口地址 | type 接口类型 | requestHeader 请求头 | responseHeader 响应头 | status 接口状态 0-关闭 1 -打开 | createTime | updateTime | isDelete</p>]]></content>
       
       
       <categories>
