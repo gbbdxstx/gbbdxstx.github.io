@@ -4,6 +4,33 @@
   
     
     <entry>
+      <title>Array</title>
+      <link href="/Array/"/>
+      <url>/Array/</url>
+      
+        <content type="html"><![CDATA[<h1 id="二分查找"><a href="#二分查找" class="headerlink" title="二分查找"></a>二分查找</h1><blockquote><p>使用条件: </p><pre><code>- 数组中元素是有序的- 注意: 若数组中存在重复元素, 那最后查找结果下标并不唯一</code></pre><p>使用场景: </p><pre><code>- 在有序数组中寻找目标值的下标- 将目标值插入有序数组中</code></pre></blockquote><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="type">int</span> <span class="title function_">binarySearch</span><span class="params">(<span class="type">int</span>[] nums, <span class="type">int</span> target)</span> &#123;</span><br><span class="line">    <span class="type">int</span> <span class="variable">left</span> <span class="operator">=</span> <span class="number">0</span>;</span><br><span class="line">    <span class="type">int</span> <span class="variable">right</span> <span class="operator">=</span> nums.length - <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">while</span> (left &lt;= right) &#123;</span><br><span class="line">        <span class="type">int</span> <span class="variable">mid</span> <span class="operator">=</span> (left + right) / <span class="number">2</span>;</span><br><span class="line">        <span class="keyword">if</span> (nums[mid] == target) <span class="keyword">return</span> mid;</span><br><span class="line">        <span class="keyword">if</span> (nums[mid] &gt; target) right = mid - <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">if</span> (nums[mid] &lt; target) left = mid + <span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> -<span class="number">1</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><h1 id="双指针"><a href="#双指针" class="headerlink" title="双指针"></a>双指针</h1><blockquote><p>介绍: 通过一个快指针和一个慢指针在一个for循环下完成两个for循环的工作</p><p>使用方法: </p><ul><li>同向移动<ul><li>双向移动</li></ul></li></ul><p>使用场景: </p><pre><code>- 原地移除数组中的某元素(同向)- 对有正有负的有序数组的元素平方再排序(双向)</code></pre></blockquote><h1 id="滑动窗口"><a href="#滑动窗口" class="headerlink" title="滑动窗口"></a>滑动窗口</h1><blockquote><p>介绍: 不断调整窗口大小寻找所需结果(利用两个指针控制窗口大小)</p><p>使用场景: </p><pre><code>- 求满足条件的子序列</code></pre></blockquote><h1 id="前缀和"><a href="#前缀和" class="headerlink" title="前缀和"></a>前缀和</h1><blockquote><p>介绍: 类似与哈夫曼编码的思想, 利用新数组保存每个数组元素i之前(包括i)的和</p><p>使用场景: </p><pre><code>- 对数组的区间和使用频繁的需求</code></pre></blockquote>]]></content>
+      
+      
+      <categories>
+          
+          <category> 算法题 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 数组 </tag>
+            
+            <tag> 双指针 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>API平台</title>
       <link href="/API%E5%B9%B3%E5%8F%B0/"/>
       <url>/API%E5%B9%B3%E5%8F%B0/</url>
