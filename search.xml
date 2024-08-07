@@ -4,6 +4,31 @@
   
     
     <entry>
+      <title>SciResearch</title>
+      <link href="/SciResearch/"/>
+      <url>/SciResearch/</url>
+      
+        <content type="html"><![CDATA[]]></content>
+      
+      
+      <categories>
+          
+          <category> 科研 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Python </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>git-&gt;repository</title>
       <link href="/git/"/>
       <url>/git/</url>
