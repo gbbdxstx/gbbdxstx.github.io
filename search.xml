@@ -4,11 +4,24 @@
   
     
     <entry>
+      <title>CoMER</title>
+      <link href="/uncategorized/CoMER/"/>
+      <url>/uncategorized/CoMER/</url>
+      
+        <content type="html"><![CDATA[]]></content>
+      
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>CNN架构</title>
       <link href="/SciResearch/CNN%E6%9E%B6%E6%9E%84/"/>
       <url>/SciResearch/CNN%E6%9E%B6%E6%9E%84/</url>
       
-        <content type="html"><![CDATA[]]></content>
+        <content type="html"><![CDATA[<h1 id="优质博客"><a href="#优质博客" class="headerlink" title="优质博客"></a>优质博客</h1><p><a href="https://blog.csdn.net/qq_37541097/category_9488472.html">网络模型讲解</a></p><h1 id="CNN"><a href="#CNN" class="headerlink" title="CNN"></a>CNN</h1><h2 id="结构"><a href="#结构" class="headerlink" title="结构"></a>结构</h2><img src="/SciResearch/CNN%E6%9E%B6%E6%9E%84/CNN%E7%BB%93%E6%9E%84%E5%9B%BE.jpg" class="" title="CNN结构图"><ul><li>输入层<code>Input layer</code></li><li>卷积层 <code>CONV layer</code></li><li>池化层 <code>Pooling layer</code></li><li>全连接层 <code>FC layer</code></li><li>输出层 <code>Output layer</code></li></ul><h3 id="Input-layer"><a href="#Input-layer" class="headerlink" title="Input layer"></a>Input layer</h3><p>对原始图像做预处理: 去均值、归一化等</p><h3 id="CONV-layer"><a href="#CONV-layer" class="headerlink" title="CONV layer"></a>CONV layer</h3><p>通过控制卷积核的大小，步幅和填充提取特征，每个神经元通过不同的卷积核关注图像的不同的特征</p><h3 id="Pooling-layer"><a href="#Pooling-layer" class="headerlink" title="Pooling layer"></a>Pooling layer</h3><p>利用特征不变形和特征降维压缩图像</p><h2 id="流程"><a href="#流程" class="headerlink" title="流程"></a>流程</h2><ul><li>INPUT</li><li>[ [ CONV -&gt; RELU ]N -&gt; POOL? ]M</li><li>[ FC -&gt; RELU ]K</li><li>FC</li></ul><h1 id="AlexNet"><a href="#AlexNet" class="headerlink" title="AlexNet"></a>AlexNet</h1><h2 id="结构-1"><a href="#结构-1" class="headerlink" title="结构"></a>结构</h2><blockquote><p>5个卷积层后紧跟个全连接层， 采用ReLu激活函数，并在全连接层后增加Dropout层减少过拟合</p></blockquote><img src="/SciResearch/CNN%E6%9E%B6%E6%9E%84/AlexNet%E7%BB%93%E6%9E%84%E5%9B%BE.png" class="" title="AlexNet结构图"><h1 id="VGG16"><a href="#VGG16" class="headerlink" title="VGG16"></a>VGG16</h1><h2 id="结构-2"><a href="#结构-2" class="headerlink" title="结构"></a>结构</h2><blockquote><p>采用连续的3×3卷积核代替AlexNet中的较大卷积核（11×11、5×5）</p></blockquote><img src="/SciResearch/CNN%E6%9E%B6%E6%9E%84/VGG16%E7%BB%93%E6%9E%84%E5%9B%BE.png" class="" title="VGG16结构图"><h1 id="ResNet"><a href="#ResNet" class="headerlink" title="ResNet"></a>ResNet</h1><h2 id="残差结构"><a href="#残差结构" class="headerlink" title="残差结构"></a>残差结构</h2><img src="/SciResearch/CNN%E6%9E%B6%E6%9E%84/residual%E7%BB%93%E6%9E%84%E5%9B%BE.png" class="" title="residual结构图"><h2 id="优势"><a href="#优势" class="headerlink" title="优势"></a>优势</h2><p>可以较好的解决梯度消失|爆炸和模型退化的问题</p><ul><li>梯度消失: 假设每一层的梯度是一个小于1的数， 随着层数变多，前面层的梯度会越来越小</li><li>模型退化: 随着层数的加深, 效果退化, 不如层数少的训练效果好</li></ul><h2 id="亮点"><a href="#亮点" class="headerlink" title="亮点"></a>亮点</h2><ul><li>提示出residual模块</li><li>使用Batch Normalization加速训练(丢弃dropout)</li></ul><h1 id="DenseNet"><a href="#DenseNet" class="headerlink" title="DenseNet"></a>DenseNet</h1><h2 id="结构-3"><a href="#结构-3" class="headerlink" title="结构"></a>结构</h2><blockquote><p>DenseNet的网络结构主要由<strong>DenseBlock</strong>和<strong>Transition</strong>组成</p></blockquote><img src="/SciResearch/CNN%E6%9E%B6%E6%9E%84/DenseNet.png" class="" title="DenseNet"><p>​在DenseBlock中，各个层的特征图大小一致，可以在channel维度上连接。DenseBlock中的非线性组合函数$ H (⋅)$采用的是BN+ReLU+3x3 Conv的结构，如图所示。另外值得注意的一点是，与ResNet不同，所有DenseBlock中各个层卷积之后均输出$k $个特征图，即得到的特征图的channel数为$k$ ，或者说采用$k $个卷积核。$k$ 在DenseNet称为growth rate，这是一个超参数。一般情况下使用较小的$ k$（比如12），就可以得到较佳的性能。假定输入层的特征图的channel数为$k_0$ ，那么$ L$层输入的channel数为$ k 0 + k (L − 1 )$，因此随着层数增加，尽管$k$设定得较小，DenseBlock的输入会非常多，不过这是由于特征重用所造成的，每个层仅有$ k$个特征是自己独有的。</p><p>​Transition层主要用于连接两个相邻的DenseBlock，整合上一个DenseBlock获得的特征，缩小上一个DenseBlock的宽高，达到下采样效果，特征图的宽高减半。Transition层包括一个1x1卷积（用于调整通道数）和2x2AvgPooling（用于降低特征图大小），结构为BN+ReLU+1x1 Conv+2x2 AvgPooling。因此，Transition层可以起到压缩模型的作用 。</p>]]></content>
       
       
       <categories>
