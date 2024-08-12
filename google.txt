@@ -1,4 +1,4 @@
-https://gbbdxstx.github.io/SciResearch/CNN%E6%9E%B6%E6%9E%84/
+https://gbbdxstx.github.io/SciResearch/ClassicModule/
 https://gbbdxstx.github.io/uncategorized/CoMER/
 https://gbbdxstx.github.io/LeetCode/LinkedList/
 https://gbbdxstx.github.io/LeetCode/Array/
