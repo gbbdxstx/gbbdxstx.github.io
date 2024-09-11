@@ -17,7 +17,7 @@
   localSearch: {"path":"/search.xml","preload":false,"top_n_per_article":1,"unescape":true,"languages":{"hits_empty":"找不到您查询的内容：${query}","hits_stats":"共找到 ${hits} 篇文章"}},
   translate: undefined,
   noticeOutdate: undefined,
-  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":200},
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":1000},
   copy: {
     success: '复制成功',
     error: '复制错误',
@@ -192,7 +192,7 @@
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Neural Network Testing Loop</span></span><br><span class="line"> model.<span class="built_in">eval</span>() <span class="comment"># set model to evaluation mode</span></span><br><span class="line"> preds = []</span><br><span class="line"> <span class="keyword">for</span> x <span class="keyword">in</span> tt_set: <span class="comment"># iterate through the dataloader</span></span><br><span class="line">    x = x.to(device) <span class="comment"># move data to device (cpu/cuda)</span></span><br><span class="line">    <span class="keyword">with</span> torch.no_grad(): <span class="comment"># disable gradient calculation</span></span><br><span class="line">        pred = model(x) <span class="comment">#  forward pass (compute output)</span></span><br><span class="line">        preds.append(pred.cpu()) <span class="comment"># collect prediction</span></span><br></pre></td></tr></table></figure>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Save/Load Trained Models</span></span><br><span class="line"><span class="comment"># Save</span></span><br><span class="line">torch.save(model.state_dict(), path)</span><br><span class="line"><span class="comment"># Load</span></span><br><span class="line">ckpt = torch.load(path)</span><br><span class="line">model.load_state_dict(ckpt)</span><br></pre></td></tr></table></figure>
 <h2 id="见loss知issue">见Loss知issue</h2>
-<style>.pdivddlmwzwo{zoom:50%;}</style><img src="/SciResearch/ClassicModule/image-20240815163223296.png" class="pdivddlmwzwo" alt="image-20240815163223296">
+<style>.mbbwhzwedtsc{zoom:50%;}</style><img src="/SciResearch/ClassicModule/image-20240815163223296.png" class="mbbwhzwedtsc" alt="image-20240815163223296">
 <ul>
 <li>判断在训练集上的Loss
 <ul>
@@ -208,7 +208,7 @@
 <blockquote>
 <p>Update learnin_rate</p>
 </blockquote>
-<style>.dxeggumwucsv{zoom: 50%;}</style><img src="/SciResearch/ClassicModule/image-20240816150452849.png" class="dxeggumwucsv" alt="image-20240816150452849">
+<style>.jgfaircxftac{zoom: 50%;}</style><img src="/SciResearch/ClassicModule/image-20240816150452849.png" class="jgfaircxftac" alt="image-20240816150452849">
 <h3 id="adagrad">Adagrad</h3>
 <blockquote>
 <p>不仅考虑现在的梯度还要考虑以前的梯度</p>
@@ -220,7 +220,7 @@ H742v3191l-4 4-4 4c-.667.7 -2 1.5-4 2.5s-4.167 1.833-6.5 2.5-5.5 1-9.5 1
 h-12l-28-84c-16.667-52-96.667 -294.333-240-727l-212 -643 -85 170
 c-4-3.333-8.333-7.667-13 -13l-13-13l77-155 77-156c66 199.333 139 419.667
 219 661 l218 661zM702 80H400000v40H742z'/></svg></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:1.277669em;"><span></span></span></span></span></span></span></span></span></span></p>
-<style>.yctywbtlszdm{zoom:50%;}</style><img src="/SciResearch/ClassicModule/image-20240816150620903.png" class="yctywbtlszdm" alt="image-20240816150620903">
+<style>.huigkpkuoxro{zoom:50%;}</style><img src="/SciResearch/ClassicModule/image-20240816150620903.png" class="huigkpkuoxro" alt="image-20240816150620903">
 <h2 id="rmsprop">RMSProp</h2>
 <blockquote>
 <p>通过<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>α</mi></mrow><annotation encoding="application/x-tex">\alpha</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.0037em;">α</span></span></span></span>控制是当前的梯度参考价值大还是现在的梯度参考价值大</p>
@@ -249,7 +249,7 @@ M1001 80h400000v40h-400000z'/></svg></span></span></span><span class="vlist-s">�
 <ul>
 <li>下图是在Adagrad的基础上增加Learning Rate Decay之后的效果</li>
 </ul>
-<style>.crjjmwykqgsq{zoom:50%;}</style><img src="/SciResearch/ClassicModule/image-20240816150716831.png" class="crjjmwykqgsq" alt="image-20240816150716831">
+<style>.dqddquiimhpg{zoom:50%;}</style><img src="/SciResearch/ClassicModule/image-20240816150716831.png" class="dqddquiimhpg" alt="image-20240816150716831">
 <h3 id="warm-up">Warm Up</h3>
 <blockquote>
 <p>Increase and then decrease 先变大后变小</p>
@@ -258,16 +258,16 @@ M1001 80h400000v40h-400000z'/></svg></span></span></span><span class="vlist-s">�
 <blockquote>
 <p>输入: 通常被称为logit</p>
 </blockquote>
-<style>.vzbcmcjewoxv{zoom:50%;}</style><img src="/SciResearch/ClassicModule/image-20240816154030059.png" class="vzbcmcjewoxv" alt="image-20240816154030059">
+<style>.fpevevmtunrq{zoom:50%;}</style><img src="/SciResearch/ClassicModule/image-20240816154030059.png" class="fpevevmtunrq" alt="image-20240816154030059">
 <h2 id="loss-of-classification">Loss of Classification</h2>
 <blockquote>
 <p>常用 Cross-entropy</p>
 </blockquote>
-<style>.ibxplrngevbz{zoom:50%;}</style><img src="/SciResearch/ClassicModule/image-20240816154406097.png" class="ibxplrngevbz" alt="image-20240816154406097">
+<style>.dmvpvkwazpvy{zoom:50%;}</style><img src="/SciResearch/ClassicModule/image-20240816154406097.png" class="dmvpvkwazpvy" alt="image-20240816154406097">
 <blockquote>
 <p>为什么要选 Cross-entropy, 因为Cross-entropy更容易走到loss小的区域, 而MSE的左上角比较平缓不容易走到右下角</p>
 </blockquote>
-<style>.kpprqsmbfuhy{zoom:50%;}</style><img src="/SciResearch/ClassicModule/image-20240816154812414.png" class="kpprqsmbfuhy" alt="image-20240816154812414">
+<style>.pymfvlwbqsir{zoom:50%;}</style><img src="/SciResearch/ClassicModule/image-20240816154812414.png" class="pymfvlwbqsir" alt="image-20240816154812414">
 <h1 id="cnn">CNN</h1>
 <h2 id="结构">结构</h2>
 <img src="/SciResearch/ClassicModule/CNN%E7%BB%93%E6%9E%84%E5%9B%BE.jpg" class="" title="ClassicModule">
@@ -327,7 +327,7 @@ M1001 80h400000v40h-400000z'/></svg></span></span></span><span class="vlist-s">�
 <p>​	Transition层主要用于连接两个相邻的DenseBlock，整合上一个DenseBlock获得的特征，缩小上一个DenseBlock的宽高，达到下采样效果，特征图的宽高减半。Transition层包括一个1x1卷积（用于调整通道数）和2x2AvgPooling（用于降低特征图大小），结构为BN+ReLU+1x1 Conv+2x2 AvgPooling。因此，Transition层可以起到压缩模型的作用 。</p>
 <h1 id="👻-transformer">👻 Transformer</h1>
 <h2 id="结构">结构</h2>
-<style>.bhpxpqvfrjil{zoom:50%;}</style><img src="/SciResearch/ClassicModule/Transformer%E7%BB%93%E6%9E%84.jpg" class="bhpxpqvfrjil" alt="Transformer结构">
+<style>.nqhtkjczmzfc{zoom:50%;}</style><img src="/SciResearch/ClassicModule/Transformer%E7%BB%93%E6%9E%84.jpg" class="nqhtkjczmzfc" alt="Transformer结构">
 <h2 id="残差和标准化">残差和标准化</h2>
 <h3 id="layernorm">LayerNorm</h3>
 <h4 id="原理">原理</h4>
@@ -379,7 +379,7 @@ M834 80h400000v40h-400000z'/></svg></span></span></span><span class="vlist-s">�
 <blockquote>
 <p>下图是Softmax函数的分布, 如果不缩小点积的范围那么大多数值会分布在两端,梯度很小的地方,会造成梯度消失</p>
 </blockquote>
-<style>.nxglxfihyhpn{zoom:50%;}</style><img src="/SciResearch/ClassicModule/image-20240812163307888.png" class="nxglxfihyhpn" alt="image-20240812163307888">
+<style>.rrllqmwovofp{zoom:50%;}</style><img src="/SciResearch/ClassicModule/image-20240812163307888.png" class="rrllqmwovofp" alt="image-20240812163307888">
 <h4 id="代码">代码</h4>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">MutiHeadAttention</span>(nn.Module):</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">__init__</span>(<span class="params">self, d_model, num_heads</span>):</span><br><span class="line">        <span class="built_in">super</span>().__init__()</span><br><span class="line">        <span class="variable language_">self</span>.num_heads = num_heads</span><br><span class="line">        <span class="variable language_">self</span>.d_model = d_model</span><br><span class="line"></span><br><span class="line">        <span class="variable language_">self</span>.w_q = nn.Linear(d_model, num_heads)</span><br><span class="line">        <span class="variable language_">self</span>.w_k = nn.Linear(d_model, num_heads)</span><br><span class="line">        <span class="variable language_">self</span>.w_v = nn.Linear(d_model, num_heads)</span><br><span class="line">        <span class="variable language_">self</span>.w_combine = nn.Linear(d_model, num_heads)</span><br><span class="line">        <span class="variable language_">self</span>.softmax = nn.Softmax(dim=-<span class="number">1</span>)</span><br><span class="line"></span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">forward</span>(<span class="params">self, q, k, v, mask=<span class="literal">None</span></span>):</span><br><span class="line">        batch_size, time, dimension = q.shape</span><br><span class="line">        n_dim = <span class="variable language_">self</span>.d_model // <span class="variable language_">self</span>.num_heads</span><br><span class="line">        q, k, v = <span class="variable language_">self</span>.w_q(q), <span class="variable language_">self</span>.w_k(k), <span class="variable language_">self</span>.w_v(v)</span><br><span class="line"></span><br><span class="line">        q = q.view(batch_size, time, <span class="variable language_">self</span>.num_heads, n_dim).permute(<span class="number">0</span>, <span class="number">2</span>, <span class="number">1</span>, <span class="number">3</span>)</span><br><span class="line">        k = k.view(batch_size, time, <span class="variable language_">self</span>.num_heads, n_dim).permute(<span class="number">0</span>, <span class="number">2</span>, <span class="number">1</span>, <span class="number">3</span>)</span><br><span class="line">        v = v.view(batch_size, time, <span class="variable language_">self</span>.num_heads, n_dim).permute(<span class="number">0</span>, <span class="number">2</span>, <span class="number">1</span>, <span class="number">3</span>)</span><br><span class="line"></span><br><span class="line">        score = q @ k.transpose(<span class="number">2</span>, <span class="number">3</span>) / math.sqrt(n_dim)</span><br><span class="line">        <span class="keyword">if</span> mask <span class="keyword">is</span> <span class="keyword">not</span> <span class="literal">None</span>:</span><br><span class="line">            score = score.masked_fill(mask == <span class="number">0</span>, -<span class="number">10000</span>)</span><br><span class="line">        score = <span class="variable language_">self</span>.softmax(score) @ v</span><br><span class="line">        score = score.permute(<span class="number">0</span>, <span class="number">2</span>, <span class="number">1</span>, <span class="number">3</span>).contiguous().view(batch_size, time, dimension)</span><br><span class="line">        out = <span class="variable language_">self</span>.w_combine(score)</span><br><span class="line">        <span class="keyword">return</span> out</span><br></pre></td></tr></table></figure>
 <h2 id="position-embedding">Position Embedding</h2>
@@ -393,7 +393,7 @@ PE_{(pos,2i+1)}=cos(pos/10000^{2i/d_{model}})
 <blockquote>
 <p>如下图,attention的计算中并不包含位置信息,交换K和V的字顺序计算出的甲醛和值相同的,因此要引入位置信息</p>
 </blockquote>
-<style>.vyaxagcoiqbu{zoom:80%;}</style><img src="/SciResearch/ClassicModule/image-20240812163527089.png" class="vyaxagcoiqbu" alt="image-20240812163527089">
+<style>.pvmerhiziqlo{zoom:80%;}</style><img src="/SciResearch/ClassicModule/image-20240812163527089.png" class="pvmerhiziqlo" alt="image-20240812163527089">
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">nn.Embedding(src_vocab_size, d_model): 词汇表大小×词嵌入的维度</span><br><span class="line">torch.unsqueeze(dim): 在指定位置添加一个维度</span><br></pre></td></tr></table></figure>
 </article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta"><i class="fas fa-circle-user fa-fw"></i>文章作者: </span><span class="post-copyright-info"><a href="https://gbbdxstx.github.io">gbbdxstx</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta"><i class="fas fa-square-arrow-up-right fa-fw"></i>文章链接: </span><span class="post-copyright-info"><a href="https://gbbdxstx.github.io/SciResearch/ClassicModule/">https://gbbdxstx.github.io/SciResearch/ClassicModule/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta"><i class="fas fa-circle-exclamation fa-fw"></i>版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="https://gbbdxstx.github.io" target="_blank">gbbdxstx</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/CNN/">CNN</a></div><div class="post_share"><div class="social-share" data-image="/img/%E9%95%BF%E7%A6%BB.png" data-sites="wechat,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.3/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.3/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/uncategorized/CoMER/" title="CoMER"><div class="cover" style="background: 缩略图"></div><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">CoMER</div></div></a></div><div class="next-post pull-right"><a href="/git/git/" title="git-&gt;repository"><img class="cover" src="/img/git.png" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">git-&gt;repository</div></div></a></div></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="/img/avatar.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">gbbdxstx</div><div class="author-info__description">隔壁班的小宋同学</div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">10</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">11</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">5</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/gbbdxstx"><i class="fab fa-github"></i><span>Follow Me</span></a></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">This is my Blog</div><div class="xpand" style="height:200px;"><canvas class="illo" width="800" height="800" style="max-width: 200px; max-height: 200px; touch-action: none; width: 640px; height: 640px;"></canvas></div></div><script src="https://fastly.jsdelivr.net/gh/xiaopengand/blogCdn@latest/xzxr/twopeople1.js"></script><script src="https://fastly.jsdelivr.net/gh/xiaopengand/blogCdn@latest/xzxr/zdog.dist.js"></script><script id="rendered-js" src="https://fastly.jsdelivr.net/gh/xiaopengand/blogCdn@latest/xzxr/twopeople.js"></script><style>.card-widget.card-announcement {
   margin: 0;

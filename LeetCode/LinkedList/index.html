@@ -18,7 +18,7 @@
   localSearch: {"path":"/search.xml","preload":false,"top_n_per_article":1,"unescape":true,"languages":{"hits_empty":"找不到您查询的内容：${query}","hits_stats":"共找到 ${hits} 篇文章"}},
   translate: undefined,
   noticeOutdate: undefined,
-  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":200},
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":1000},
   copy: {
     success: '复制成功',
     error: '复制错误',
@@ -171,14 +171,14 @@
 <blockquote>
 <p>[链表相交](<a target="_blank" rel="noopener" href="https://leetcode.cn/problems/intersection-of-two-linked-lists-lcci/description/">面试题 02.07. 链表相交 - 力扣（LeetCode）</a>)</p>
 </blockquote>
-<style>.bkuulsnkttiw{zoom: 80%;}</style><img src="/LeetCode/LinkedList/image-20240819210334517.png" class="bkuulsnkttiw" alt="image-20240819210334517">
+<style>.kvlvwarrwepo{zoom: 80%;}</style><img src="/LeetCode/LinkedList/image-20240819210334517.png" class="kvlvwarrwepo" alt="image-20240819210334517">
 <p>第一眼看到这个题目，很快啊就能想到分别遍历得到长度然后长的前进差值的步数,然后根据<code>node1==node2</code>来结束。但是呢，还有一个巧妙的方式是两个链表同步前进，短的走完后呢，开始从长的头部开始同步向后走，当长的走完后呢，开始从短的头部开始同步往后走，此时！此时！他们到链表尾部的长度是相同的！</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> ListNode <span class="title function_">getIntersectionNode</span><span class="params">(ListNode headA, ListNode headB)</span> &#123;</span><br><span class="line">		<span class="comment">// p1 指向 A 链表头结点，p2 指向 B 链表头结点</span></span><br><span class="line">		<span class="type">ListNode</span> <span class="variable">p1</span> <span class="operator">=</span> headA, p2 = headB;</span><br><span class="line">		<span class="keyword">while</span> (p1 != p2) &#123;</span><br><span class="line">			<span class="comment">// p1 走一步，如果走到 A 链表末尾，转到 B 链表</span></span><br><span class="line">			<span class="keyword">if</span> (p1 == <span class="literal">null</span>) p1 = headB;</span><br><span class="line">			<span class="keyword">else</span>            p1 = p1.next;</span><br><span class="line">			<span class="comment">// p2 走一步，如果走到 B 链表末尾，转到 A 链表</span></span><br><span class="line">			<span class="keyword">if</span> (p2 == <span class="literal">null</span>) p2 = headA;</span><br><span class="line">			<span class="keyword">else</span>            p2 = p2.next;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">return</span> p1;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <h1 id="142-环形链表ii">142.环形链表II</h1>
 <blockquote>
 <p>[142.环形链表II](<a target="_blank" rel="noopener" href="https://leetcode.cn/problems/linked-list-cycle-ii/description/">142. 环形链表 II - 力扣（LeetCode）</a>)</p>
 </blockquote>
-<style>.bgtooynbokmx{zoom:80%;}</style><img src="/LeetCode/LinkedList/image-20240819212037291.png" class="bgtooynbokmx" alt="image-20240819212037291">
+<style>.vccmfbichtiy{zoom:80%;}</style><img src="/LeetCode/LinkedList/image-20240819212037291.png" class="vccmfbichtiy" alt="image-20240819212037291">
 <p>看到这个题目呢，第一眼…没思路，哈哈。第二眼，si~，一个指针求不了，双指针？双指针两个指针之间也没有固定的长度呀。又不会了~</p>
 <p>那么想不出来哈哈瞄一眼答案🧐 果然-双指针! 再看一眼，哇！学到了</p>
 <p>既然不知道双指针之间的长度，但是但是这个题目要求有没有环呀，既然如此那一个走快点一个走慢点，如果有环，岂不是必相遇。</p>
